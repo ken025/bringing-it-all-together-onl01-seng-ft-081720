@@ -19,7 +19,7 @@ class Dog
     end 
     
     def self.drop_table
-       DB[:conn].execute("DROP TABLE IF EXISTS students")
+       DB[:conn].execute("DROP TABLE IF EXISTS dogs")
      end 
      
     
@@ -32,7 +32,7 @@ def save
     VALUES (?,?)"
     
   DB[:conn].execute(sql, self.name, self.breed)
-  @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
+  @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
   end
 end
 
